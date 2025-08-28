@@ -17,7 +17,7 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Pushbullet setup
-pb = Pushbullet("xyz")  # Replace with your token
+pb = Pushbullet("xyzxyz")  # Replace with your token
 
 # Text-to-speech
 def speak_text(text):
@@ -215,3 +215,4 @@ def main():
 if __name__ == "__main__":
 
      main()
+
