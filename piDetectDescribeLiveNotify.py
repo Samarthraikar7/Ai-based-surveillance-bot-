@@ -17,7 +17,7 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 # Pushbullet setup
-pb = Pushbullet("o.aLBXczjcvn2u5G2grjRHOKZO0Qkgrpwq")  # Replace with your token
+pb = Pushbullet("xyz")  # Replace with your token
 
 # Text-to-speech
 def speak_text(text):
@@ -36,7 +36,7 @@ def load_blip_model():
 # Get video stream from Raspberry Pi
 def get_pi_video_stream():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect(('192.168.68.82', 8485))  # 🔁 Replace with your Pi's IP address
+    client_socket.connect(('123.123.123', 1234))  # 🔁 Replace with your Pi's IP address
 
     data = b""
     payload_size = struct.calcsize(">I")  # Match with Pi: big-endian unsigned int
@@ -203,14 +203,15 @@ def main():
     print("3. live     - Show webcam live feed")
     cmd = input("Enter command: ").strip().lower()
 
-    if cmd == "describe":
+    if cmd == "1":
         describe_scene()
-    elif cmd == "detect":
+    elif cmd == "2":
         detect_humans()
-    elif cmd == "live":
+    elif cmd == "3":
         live_feed()
     else:
         print("❌ Unknown command.")
 
 if __name__ == "__main__":
+
      main()
